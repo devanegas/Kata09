@@ -10,6 +10,7 @@ namespace Kata09.Models
         public Checkout(List<PricingRule> pricingRules)
         {
             _pricingRules = pricingRules;
+            ItemQuantityDictionary = new Dictionary<Item, int>();
         }
         public double Total { get; set; }
         public Dictionary<Item, int> ItemQuantityDictionary { get; set; }
@@ -89,13 +90,14 @@ namespace Kata09.Models
 
         private void AddItemToDictionary(Item item)
         {
-            if (ItemQuantityDictionary.ContainsKey(item))
+
+            if (ItemQuantityDictionary == null || ItemQuantityDictionary.ContainsKey(item) == false)
             {
-                ItemQuantityDictionary[item]++;
+                ItemQuantityDictionary.Add(item, 1);
             }
             else
             {
-                ItemQuantityDictionary[item] = 1;
+                ItemQuantityDictionary[item]++;
             }
         }
     }

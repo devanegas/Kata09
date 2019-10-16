@@ -1,3 +1,4 @@
+using Kata09.Models;
 using NUnit.Framework;
 
 namespace Kata09Tests
@@ -14,5 +15,16 @@ namespace Kata09Tests
         {
             Assert.Pass();
         }
+
+        //public double Price(string items)
+        //{
+        //    var co = new Checkout(rules);
+        //    foreach(var letter in items)
+        //    {
+        //        co.Scan(new Item(letter);
+        //    }
+
+        //    return co.Total;
+        //}
     }
 }
